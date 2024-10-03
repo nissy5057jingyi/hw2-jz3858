@@ -21,10 +21,10 @@ SC_MODULE(fc_layer) {
     sc_out<bool> conf_done;
 
     // Data interface
-    sc_port<put_get_if<float>> data_i;
-    sc_port<put_get_if<float>> weights_i;
-    sc_port<put_get_if<float>> bias_i;
-    sc_port<put_get_if<float>> data_o;
+    sc_port<tlm::tlm_fifo_get_if<float>> data_i;
+    sc_port<tlm::tlm_fifo_get_if<float>> weights_i;
+    sc_port<tlm::tlm_fifo_get_if<float>> bias_i;
+    sc_port<tlm::tlm_fifo_put_if<float>> data_o;
 
     // Control interface
     sc_out<bool> irq_o;
